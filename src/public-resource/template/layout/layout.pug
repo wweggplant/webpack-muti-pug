@@ -1,0 +1,18 @@
+- var buildFileConfig = require('configDir/build-file.config');
+- var loadImage = buildFileConfig.images.loadImage;
+mixin title(name)
+    title My Site - #{name}
+doctype html
+html
+    head
+        block title
+        block style
+        link(href= buildFileConfig.dll.css rel="stylesheet")
+    body
+        block content
+            #wrap
+                p content
+        block foot
+            p footer
+        block scripts
+        script(src= buildFileConfig.js.jquery)

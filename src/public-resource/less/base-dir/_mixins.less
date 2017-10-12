@@ -1,0 +1,84 @@
+/* 颜色 */
+
+// Mixins
+.full-screen() {
+  width: 100%;
+}
+
+.size(@width, @height) {
+  width: @width;
+  height: @height;
+}
+
+.fl() {
+  float: left;
+}
+
+.fr() {
+  float: right;
+}
+
+.clearfix() {
+  &:before,&:after{
+    content:"";
+    display:table;
+  }
+  &:after{clear:both;}
+  &{
+    *zoom:1;/*IE/7/6*/
+  }
+}
+
+.block-center() {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.text-ellipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cursorPointer() {
+  cursor: pointer;
+}
+
+
+.padding0() {
+  padding: 0;
+}
+
+.bg-color(@bgColor:@main-color,@color:@white-color){
+  background-color: @bgColor;
+  color: @color;
+}
+
+@fix-mqs: false;
+@old-ie: false;
+
+// Mixin that will create the fixed IE styles
+.respond-min(@width; @rules) when (@old-ie = false) {
+  @media screen and (min-width: @width) {
+    @rules();
+  }
+}
+.respond-max(@width; @rules) when (@old-ie = false) {
+  @media screen and (max-width: @width) {
+    @rules();
+  }
+}
+
+.setBottomLine(@c: @grey-color) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid @c;
+  color: @c;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+}

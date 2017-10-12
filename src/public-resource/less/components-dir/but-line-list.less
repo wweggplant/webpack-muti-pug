@@ -1,0 +1,101 @@
+@import "~lessDir/common.less";
+
+@bus-sub-font-size:12px;
+@bus-detail-sub-bg-color:#f4f4f4;
+@Height:75px/2;
+@LineHeight: unit((@Height) / @bus-sub-font-size); // 高度减去上下padding的行高
+
+.bus-line-list-item-wrap{
+  padding-left: 0;
+  padding-right: 0;
+  &:before{
+    left: 0;
+  }
+}
+.bus-line-list-item{
+  width: 100%;
+  color:#484848;
+  .flight-number{
+    margin-right: 2.5em;
+    width: 9em;
+    display: inline-block;
+  }
+}
+.bus-line-list-main,
+.bus-line-list--sub{
+  padding:@list-paddingV @list-paddingH;
+}
+.bus-line-list__bus__flag{
+  margin: 0 .5em;
+  letter-spacing: 0;
+  color:@grey-color;
+  &:after,&:before{
+    content:" ";
+    display: inline-block;
+    transform: scaleY(0.5);
+    height: 1px;
+    width: 2em;
+    background: @grey-color;
+    vertical-align: middle;
+  }
+}
+.bus-line-list--sub{
+  font-size: @bus-sub-font-size;
+  color:@grey-color;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  line-height: 2;
+  > .weui-flex {
+    align-items: center;
+    width: 85%;
+  }
+}
+
+.bus-line-list--detail__btn{
+  color:@main-color;
+  text-align: right;
+}
+.bus-line-list--sub__take-date{
+  flex: 0 0 45%;
+}
+.bus-line-list--sub__line{
+  text-align: center;
+  flex: 0 0 25%;
+}
+.bus-line-list--sub__sign{
+  text-align: center;
+  color:@white-color;
+  background-color: @yellow-color;
+  margin-left: 1em;
+  padding: 0 .3em;
+  flex: 0 0;
+}
+
+.bus-line-list--del-btn{
+  color:@white-color;
+  font-size: 80%;
+  line-height: 1;
+  padding: .5em 1em;
+}
+.bus-line-list--sub--detail{
+  padding:0;
+  font-size: @bus-sub-font-size;
+  color:@grey-color;
+  line-height: @LineHeight;
+  margin: 1em auto -10px auto;
+  background-color: @bus-detail-sub-bg-color;
+  li{
+    position: relative;
+    padding: 0 10px;
+    &:after{
+      .setBottomLine(#aeaeae);
+    }
+    &:last-child:after{
+      display: none;
+    }
+  }
+}
+#main-wrapper{
+  padding: 0;
+}

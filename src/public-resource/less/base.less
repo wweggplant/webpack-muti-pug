@@ -1,0 +1,121 @@
+@import "common.less";
+@import "~iconfontDir/iconfont";
+
+body {
+  font-family:  Helvetica, Tahoma, Aria,"Hiragino Sans GB",-apple-system-font,SimSun, "宋体", Heiti, "黑体", sans-serif;
+}
+
+i.icon{
+  color: @main-color;
+}
+
+i.icon.warming{
+  color: @yellow-color;
+}
+.weui-input::placeholder{
+  color:#dcdcdc;
+}
+.grey{
+  color:@grey-color;
+}
+.full-height{
+  height:100vh;
+}
+.white-color{
+  color:@white-color;
+}
+
+.cursorPointer {
+  .cursorPointer();
+}
+.padding0 {
+  .padding0();
+}
+.text-center{
+  text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+#wrapper{
+  max-width: 798px;
+  margin: auto;
+}
+#main-wrapper{
+  padding: 0;
+}
+
+.grey-bg{
+  background-color: @grey-bg-color;
+}
+
+.navbar{
+  height:3em;
+  text-align: center;
+  .bg-color();
+  header{
+    line-height:3;
+  }
+}
+.hide{
+  display: none;
+}
+*{
+  box-sizing: border-box;
+}
+.unstyle-list{
+  li{
+    list-style: none;
+  }
+}
+
+.flex-center{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.common-mask{
+  display: none;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: rgba(13, 13, 13, 0.42);
+  z-index: 3;
+}
+.common-errtip{
+  top: 40%;
+  top: ~"calc(50% - 2em)";
+  width: 80%;
+  margin: auto;
+  transform: translateY(-50%);
+}
+.weui-cells_form{
+  .weui-btn_primary{
+    width: ~"calc(100% - 30px)";
+    margin:1em auto 0;
+  }
+}
+.default-plain-btn{
+  background-color: transparent;
+  color:@main-color;
+  border:1px solid @main-color;
+}
+.vh-center-wrap{
+  height: ~"calc(100vh - 6em)";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .vh-center{
+    text-align: center;
+    img{
+      display: block;
+      width: 10em;
+      margin-bottom: 1.5em;
+    }
+  }
+}
